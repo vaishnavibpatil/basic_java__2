@@ -1,4 +1,4 @@
-public class stack_array 
+public class queue_array 
 {
     static class Queue
     {
