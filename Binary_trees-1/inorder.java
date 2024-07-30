@@ -1,4 +1,4 @@
-public class binarytree
+public class inorder
 {
     static class Node
     {
@@ -30,13 +30,28 @@ public class binarytree
 
             return newnode;
         }
+
+        public void inorder(Node root)
+        {
+            if(root == null)
+            {
+                return;
+            }           
+            inorder(root.left);
+            System.out.print(root.data + " ");
+            inorder(root.right);
+        }
        
     }
+
+
     public static void main(String args[])
     {
         int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         tree t = new tree();
         Node root = t.binary(nodes);  
-        System.out.print(root.data);
+        System.out.println(root.data);
+
+        t.inorder(root);
     }
 }

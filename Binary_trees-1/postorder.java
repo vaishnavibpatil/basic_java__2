@@ -1,4 +1,4 @@
-public class binarytree
+public class postorder
 {
     static class Node
     {
@@ -29,6 +29,18 @@ public class binarytree
             newnode.right=binary(nodes);
 
             return newnode;
+    
+        }
+        public void postorder(Node root)
+        {
+            if(root == null)
+            {
+                return;
+            }
+            postorder(root.left);
+            postorder(root.right);
+            System.out.print(root.data +" ");
+
         }
        
     }
@@ -37,6 +49,9 @@ public class binarytree
         int nodes[] = {1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         tree t = new tree();
         Node root = t.binary(nodes);  
-        System.out.print(root.data);
+        System.out.println(root.data);
+
+        t.postorder(root);
+        
     }
 }
